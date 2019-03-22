@@ -31,7 +31,7 @@ for n in range(1,100000): #Loop para contagem
 
 trocou_ganhou = Decimal((trocou_ganhou/venceu)*100)#Tranforma em porcentagem
 trocou_ganhou = Decimal(trocou_ganhou.quantize(Decimal('.01'), rounding=ROUND_HALF_UP))
-print("Ganhou pois trocou: ", trocou_ganhou)#Printa porcentagem
+print("Ganhou pois trocou: {}%" .format(trocou_ganhou))#Printa porcentagem
 ficou_ganhou = Decimal((ficou_ganhou/venceu)*100)
 ficou_ganhou = Decimal(ficou_ganhou.quantize(Decimal('.01'), rounding=ROUND_HALF_UP))
-print("Ganhou pois ficou: ", ficou_ganhou)
+print("Ganhou pois ficou: {}%" .format(ficou_ganhou))
