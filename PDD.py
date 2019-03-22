@@ -15,7 +15,7 @@ for n in range(1,100000): #Loop para contagem
         porta_escolhida2 = random.choice(portas)#Escolhe a segunda porta aleatoriamente
         if porta_escolhida2 == 'carro':#Se trocar pela porta do prêmio
             trocou_ganhou += 1 #Incrementa probabilidade de ganho
-            venceu += 1 #Incrementa variável de vitóri
+            venceu += 1 #Incrementa variável de vitória
     elif porta_escolhida == 'cabra2':#Se a primeira porta for falsa
         del portas[0] #Apresentador mostra a outra porta falsa
         porta_escolhida2 = random.choice(portas)#Escolhe segunda porta
