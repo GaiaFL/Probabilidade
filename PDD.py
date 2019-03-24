@@ -7,7 +7,7 @@ trocou_ganhou = 0
 ficou_ganhou = 0
 venceu = 0
 
-for n in range(1,100000): #Loop para contagem
+for n in range(1,100001): #Loop para contagem
     portas = ["cabra1", "cabra2", "carro"]#Portas
     porta_escolhida = random.choice(portas) #Escolhe a primeira porta aleatoriamente
     if porta_escolhida == 'cabra1': #Se a primeira porta for falsa
@@ -16,18 +16,24 @@ for n in range(1,100000): #Loop para contagem
         if porta_escolhida2 == 'carro':#Se trocar pela porta do prêmio
             trocou_ganhou += 1 #Incrementa probabilidade de ganho
             venceu += 1 #Incrementa variável de vitória
+            print(str(n)+"," + str(round(trocou_ganhou/venceu,6))+"," + str(round(ficou_ganhou/venceu, 6)))
+            
     elif porta_escolhida == 'cabra2':#Se a primeira porta for falsa
         del portas[0] #Apresentador mostra a outra porta falsa
         porta_escolhida2 = random.choice(portas)#Escolhe segunda porta
         if porta_escolhida2 == 'carro':#Se trocar pela porta do prêmio
             trocou_ganhou += 1
             venceu += 1
+            print(str(n)+"," + str(round(trocou_ganhou/venceu,6))+"," + str(round(ficou_ganhou/venceu, 6)))
+            
     else:#Se a primeira porta for a do prêmio
         del portas[0]#Apresentador mostra outra porta falsa
         porta_escolhida2 = random.choice(portas)#Escolhe segunda porta
         if porta_escolhida2 == 'carro':#Se manter a escolha
             ficou_ganhou += 1
             venceu += 1
+            print(str(n)+"," + str(round(trocou_ganhou/venceu,6))+"," + str(round(ficou_ganhou/venceu, 6)))
+print()
 
 trocou_ganhou = Decimal((trocou_ganhou/venceu)*100)#Tranforma em porcentagem
 trocou_ganhou = Decimal(trocou_ganhou.quantize(Decimal('.01'), rounding=ROUND_HALF_UP))
